@@ -19,7 +19,9 @@ console.log(process.env.DATABASEURL);
 
 // mongodb+srv://Plimpkin88:Mac2Night%25@cluster0.g9mtp.mongodb.net/<dbname>?retryWrites=true&w=majority
 // mongodb://localhost/yelp_camp_v12_dynamic
-mongoose.connect(process.env.DATABASEURL, {
+const url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp_v12_dynamic";
+
+mongoose.connect(url, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
 	useCreateIndex: true
