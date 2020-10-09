@@ -15,10 +15,11 @@ var   commentRoutes    = require("./routes/comments"),
 	  campgroundRoutes = require("./routes/campgrounds"),
 	  indexRoutes      = require("./routes/index");
 
-
-mongoose.connect("mongodb://localhost/yelp_camp_v12_dynamic", {
+// mongodb://localhost/yelp_camp_v12_dynamic
+mongoose.connect("mongodb+srv://Plimpkin88:Mac2Night%25@cluster0.g9mtp.mongodb.net/<dbname>?retryWrites=true&w=majority", {
 	useNewUrlParser: true,
-	useUnifiedTopology: true
+	useUnifiedTopology: true,
+	useCreateIndex: true
 })
 .then(()=> console.log("Connected!"))
 .catch(error => console.log(error.message));
